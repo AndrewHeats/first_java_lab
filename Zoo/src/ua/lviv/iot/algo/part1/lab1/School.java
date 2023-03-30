@@ -1,8 +1,12 @@
 package ua.lviv.iot.algo.part1.lab1;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @ToString(callSuper = true)
+@Setter
+@Getter
 public class School extends Building {
     private int numberOfStudents;
     private int numberOfTeachers;

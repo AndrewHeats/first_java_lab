@@ -18,14 +18,14 @@ public class BuildingManager {
     public List<Building> findBuildingsBuiltAfter(int year){
         List<Building> temp;
        temp=buildings.stream().
-                filter(building -> building.yearOfBuilding > year).
+                filter(building -> building.getYearOfBuilding() > year).
                 collect(Collectors.toList());
        return temp;
     }
     public List<Building> findResidential(){
         List<Building> temp;
         temp=buildings.stream().
-                filter(building -> building.isResidential==true ).
+                filter(Building:: isResidential).
                 collect(Collectors.toList());
         return temp;
     }
