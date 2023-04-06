@@ -9,4 +9,16 @@ public class BankTest extends Bank {
     public void testCalculateConstructionPrice(){
         assertEquals(15625.0, bank.caclucateConstructionPrice(),0.001);
     }
+    @Test
+    public void testGetNumberOfCashier(){
+        assertEquals(8, bank.getNumberOfCashier());
+    }
+    @Test
+    public void testGetMaxNumberOfPeople(){
+        assertEquals(25, bank.getMaxNumberOfPeople());
+    }
+    @Test
+    public void testGetOpenCloseHours(){
+        assertEquals("10:00-21:00", bank.getOpenCloseHours());
+    }
 }
