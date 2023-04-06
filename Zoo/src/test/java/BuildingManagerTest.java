@@ -23,14 +23,12 @@ public class BuildingManagerTest extends BuildingManager {
         buildings.add(building2);
         buildings.add(building3);
         buildings.add(building4);
-
+        BuildingManager manager = new BuildingManager(buildings);
         List<Building> expectedBuildings = new ArrayList<>();
         expectedBuildings.add(building1);
         expectedBuildings.add(building4);
 
-        List<Building> actualBuildings = buildings.stream().
-                filter(building -> building.getYearOfBuilding() > 2000).
-                collect(Collectors.toList());
+        List<Building> actualBuildings = manager.findBuildingsBuiltAfter(2000);
         assertEquals(expectedBuildings, actualBuildings);
     }
 
@@ -47,13 +45,11 @@ public class BuildingManagerTest extends BuildingManager {
         buildings.add(building2);
         buildings.add(building3);
         buildings.add(building4);
-
+        BuildingManager manager = new BuildingManager(buildings);
         List<Building> expectedBuildings = new ArrayList<>();
         expectedBuildings.add(building3);
 
-        List<Building> actualBuildings = buildings.stream().
-                filter(Building:: isResidential).
-                collect(Collectors.toList());
+        List<Building> actualBuildings = manager.findResidential();
         assertEquals(expectedBuildings, actualBuildings);
     }
 }
