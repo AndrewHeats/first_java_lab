@@ -1,11 +1,9 @@
 package ua.lviv.iot.algo.part1.lab3;
 
 import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 @Getter
-@Setter
 @ToString(callSuper = true)
 public class Zoo extends Building {
     private int moneyEquivavlent=20000;
@@ -31,17 +29,17 @@ public class Zoo extends Building {
         return instance;
     }
 
-    public void increaseCapacity(int number) {
-        capacity += number;
+    public int increaseCapacity(int number) {
+        return capacity += number;
     }
 
-    public void splitArea() {
-        area /= 2;
+    public double splitArea() {
+        return area /= 2;
     }
 
-    public void addNewRegion(double area) {
+    public double addNewRegion(double area) {
         location += " and New Region";
-        this.area += area;
+        return this.area += area;
     }
 
     @Override

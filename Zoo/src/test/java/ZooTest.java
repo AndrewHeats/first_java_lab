@@ -24,4 +24,16 @@ public class ZooTest extends Zoo {
     public void testGetCapacity(){
         assertEquals(100, zoo.getCapacity());
     }
+    @Test
+    public void testSplitArea() {
+        assertEquals(100.25, zoo.splitArea(),0.001);
+    }
+    @Test
+    public void testIncreaseCapacity() {
+        assertEquals(150, zoo.increaseCapacity(50));
+    }
+    @Test
+    public void testAddNewRegion() {
+        assertEquals(201.0, zoo.addNewRegion(0.5),0.001);
+    }
 }
