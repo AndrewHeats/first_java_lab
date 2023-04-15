@@ -1,0 +1,16 @@
+isResidential, yearOfBuildings, name, location, area, capacity
+false, 2001, Hoshin, Tokyo, 200.5, 100
+isResidential, yearOfBuildings, numberOfCashier, openCloseHours, maxNumberOfPeople
+false, 1996, 8, 10:00-21:00, 25
+isResidential, yearOfBuildings, numberOfStudents, numberOfTeachers, name
+true, 1980, 720, 50, LPML
+isResidential, yearOfBuildings, numberOfBooks, numberOfHalls, address
+false, 2004, 10000, 5, Stepana Bandery str.
+isResidential, yearOfBuildings, name, location, area, capacity
+false, 0, null, null, 0.0, 0
+isResidential, yearOfBuildings, numberOfCashier, openCloseHours, maxNumberOfPeople
+false, 0, 0, null, 0
+isResidential, yearOfBuildings, numberOfStudents, numberOfTeachers, name
+false, 0, 0, 0, null
+isResidential, yearOfBuildings, numberOfBooks, numberOfHalls, address
+false, 0, 0, 0, null

@@ -14,5 +14,10 @@ public abstract class Building {
     private int yearOfBuilding;
 
     abstract double caclucateConstructionPrice();
-
+    public String getHeaders() {
+        return "isResidential, yearOfBuildings";
+    }
+    public String toCSV() {
+        return isResidential + ", " + yearOfBuilding;
+    }
 }

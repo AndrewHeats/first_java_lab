@@ -1,12 +1,14 @@
 package ua.lviv.iot.algo.part1.lab3;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+
+@NoArgsConstructor
 @ToString(callSuper = true)
 @Getter
 public class School extends Building {
-    private int moneyEquivavlent=10000;
     private int numberOfStudents;
     private int numberOfTeachers;
     private String name;
@@ -18,12 +20,18 @@ public class School extends Building {
         this.name = name;
     }
 
-    public School() {
-    }
 
     @Override
     public double caclucateConstructionPrice() {
-        System.out.println((numberOfStudents / numberOfTeachers) * moneyEquivavlent + " this is how much this school which has name " + name + " costs");
-        return (numberOfStudents / numberOfTeachers) * moneyEquivavlent;
+        System.out.println((numberOfStudents / numberOfTeachers) * 10000 + " this is how much this school which has name " + name + " costs");
+        return (numberOfStudents / numberOfTeachers) * 10000;
+    }
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + ", numberOfStudents, numberOfTeachers, name";
+    }
+    @Override
+    public String toCSV() {
+        return super.toCSV() +", " + numberOfStudents + ", " + numberOfTeachers + ", " + name ;
     }
 }
