@@ -52,27 +52,4 @@ public class BuildingManager {
                 }))
                 .toList();
     }
-
-    public static void main(String[] args) throws IOException {
-        List<Building> buildings = new ArrayList<Building>();
-        BuildingManager manager = new BuildingManager(buildings);
-        Building building1 = new Zoo("Hoshin", "Tokyo", 200.5, 100, false, 2001);
-        Building building2 = new Bank(8, "10:00-21:00", 25, false, 1996);
-        Building building3 = new School(720, 50, "LPML", true, 1980);
-        Building building4 = new Library(10000, 5, "Stepana Bandery str.", false, 2004);
-        Building building5 = new Zoo();
-        Building building6 = new Bank();
-        Building building7 = new School();
-        Building building8 = new Library();
-        manager.addBuilding(building1);
-        manager.addBuilding(building5);
-        manager.addBuilding(building2);
-        manager.addBuilding(building6);
-        manager.addBuilding(building3);
-        manager.addBuilding(building7);
-        manager.addBuilding(building4);
-        manager.addBuilding(building8);
-        BuildingWriter buildingWriter = new BuildingWriter();
-        buildingWriter.write(buildings);
-    }
 }
