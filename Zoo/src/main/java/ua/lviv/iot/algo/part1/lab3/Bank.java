@@ -32,7 +32,7 @@ public class Bank extends Building {
     }
     @Override
     public String toCSV() {
-        return super.toCSV() + ", " + numberOfCashier + ", " + openCloseHours + ", " + maxNumberOfPeople ;
+        return super.toCSV() + ", " + numberOfCashier + ", " + openCloseHours + ", " + maxNumberOfPeople;
     }
 
 }

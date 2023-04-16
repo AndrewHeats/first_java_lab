@@ -5,10 +5,11 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
+@Getter
 @NoArgsConstructor
 @ToString
-@Getter
+@AllArgsConstructor
+
 public abstract class Building {
     private boolean isResidential;
     private int yearOfBuilding;

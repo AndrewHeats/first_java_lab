@@ -1,7 +1,7 @@
 package ua.lviv.iot.algo.part1.lab3;
 
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +17,8 @@ public class BuildingManagerTest extends BuildingManager {
     Building building3 = new School(720, 50, "LPML", true, 1980);
     Building building4 = new Library(10000, 5, "Stepana Bandery str.", false, 2004);
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         buildings.add(building1);
         buildings.add(building2);
         buildings.add(building3);
@@ -28,11 +28,6 @@ public class BuildingManagerTest extends BuildingManager {
 
     @Test
     public void testFindBuildingsBuiltAfter() {
-        buildings.add(building1);
-        buildings.add(building2);
-        buildings.add(building3);
-        buildings.add(building4);
-        manager = new BuildingManager(buildings);
         List<Building> expectedBuildings = new ArrayList<>();
         expectedBuildings.add(building1);
         expectedBuildings.add(building4);
@@ -43,11 +38,6 @@ public class BuildingManagerTest extends BuildingManager {
 
     @Test
     public void testFindResidential() {
-        buildings.add(building1);
-        buildings.add(building2);
-        buildings.add(building3);
-        buildings.add(building4);
-        manager = new BuildingManager(buildings);
         List<Building> expectedBuildings = new ArrayList<>();
         expectedBuildings.add(building3);
 
@@ -55,5 +45,17 @@ public class BuildingManagerTest extends BuildingManager {
         for (Building building : actualBuildings) {
             assertTrue(building.isResidential());
         }
+    }
+
+    @Test
+    public void testSortBuildings(){
+        List<Building> expected = new ArrayList<>();
+        expected.add(building2);
+        expected.add(building1);
+        expected.add(building4);
+        expected.add(building3);
+        List<Building> actual = new ArrayList<>();
+        actual=manager.sortBuildings();
+        assertEquals(expected, actual );
     }
 }

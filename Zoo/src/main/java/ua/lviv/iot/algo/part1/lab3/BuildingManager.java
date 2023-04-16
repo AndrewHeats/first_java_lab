@@ -1,7 +1,5 @@
 package ua.lviv.iot.algo.part1.lab3;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,9 +36,9 @@ public class BuildingManager {
     public List<Building> sortBuildings() {
         return buildings.stream()
                 .sorted(Comparator.comparingInt(building -> {
-                    if (building instanceof Zoo) {
+                    if (building instanceof Bank) {
                         return 0;
-                    } else if (building instanceof Bank) {
+                    } else if (building instanceof Zoo) {
                         return 1;
                     } else if (building instanceof Library) {
                         return 2;
@@ -52,4 +50,5 @@ public class BuildingManager {
                 }))
                 .toList();
     }
+
 }

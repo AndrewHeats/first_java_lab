@@ -1,13 +1,11 @@
 package ua.lviv.iot.algo.part1.lab3;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 public class BuildingWriter {
-    public String write(List<Building> buildings){
+    public String writeToFile(List<Building> buildings) throws IOException {
         if (buildings==null||buildings.isEmpty()){
             return null;
         }
@@ -20,23 +18,22 @@ public class BuildingWriter {
                 writer.write(building.toCSV());
                 writer.write("\n");
             }
-        }catch(IOException e){
-
         }
         return defaultFileName;
     }
-    public String WriteToFileForLevel3(List<Building> buildings) throws IOException {
+    public String writeToFileForLevel3(List<Building> buildings) throws IOException {
         if (buildings==null||buildings.isEmpty()){
             return null;
         }
+        BuildingManager manager = new BuildingManager(buildings);
+        List<Building> sortedBuildings = manager.sortBuildings();
         String defaultFileName ="result.csv";
-        File csvOutputFile = new File(defaultFileName);
         try (FileWriter writer
                      = new FileWriter(defaultFileName)) {
-            Building buildingType = buildings.get(0);
-            writer.write(buildings.get(0).getHeaders());
+            Building buildingType = sortedBuildings.get(0);
+            writer.write(sortedBuildings.get(0).getHeaders());
             writer.write("\n");
-            for (var building : buildings) {
+            for (var building : sortedBuildings) {
                 if (buildingType.getClass() != building.getClass()) {
                     buildingType = building;
                     writer.write(building.getHeaders());

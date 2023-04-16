@@ -1,10 +1,12 @@
 package ua.lviv.iot.algo.part1.lab3;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Getter
 @ToString(callSuper = true)
+@NoArgsConstructor
 public class Zoo extends Building {
     private String name;
     private String location;
@@ -19,9 +21,6 @@ public class Zoo extends Building {
         this.area = area;
         this.capacity = capacity;
 
-    }
-
-    public Zoo() {
     }
 
     public static Zoo getInstance() {
@@ -44,7 +43,7 @@ public class Zoo extends Building {
     @Override
     public double caclucateConstructionPrice() {
         System.out.println(area * 20000 / capacity + " this is how much money you need spend to build zoo named " + name);
-        return (area * 20000 / capacity);
+        return area * 20000 / capacity;
     }
     @Override
     public String getHeaders() {
