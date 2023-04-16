@@ -36,10 +36,8 @@ public class BuldingWriterTest {
     @Test
     public void testEmptyWrite() throws IOException {
         writer = new BuildingWriter();
-        writer.write(null);
         //check if expected file contains the same data as written
-        File file = new File(RESULT_FILENAME);
-        Assertions.assertFalse(file.exists());
+        Assertions.assertNull(writer.write(null));
     }
     @Test
     public void testWriteListOfBuildings() throws IOException {
