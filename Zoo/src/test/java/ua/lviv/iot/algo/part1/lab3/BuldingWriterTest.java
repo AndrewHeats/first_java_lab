@@ -45,14 +45,9 @@ public class BuldingWriterTest {
 
     }
 
-    /*@AfterEach
-    public void tearDown() throws IOException {
-        Files.deleteIfExists(Path.of(RESULT_FILENAME));
-    }*/
     @Test
     public void testEmptyWrite() throws IOException {
         writer = new BuildingWriter();
-        //check if expected file contains the same data as written
         Assertions.assertNull(writer.writeToFileForLevel3(null));
     }
 
@@ -63,8 +58,8 @@ public class BuldingWriterTest {
         Path expected = new File(RESULT_FILENAME).toPath();
         Path actual = new File(EXPECTED_FILENAME).toPath();
         ;
-        Assertions.
-                assertEquals(-1L,
+        Assertions
+                .assertEquals(-1L,
                         Files.mismatch(expected, actual));
 
     }
@@ -72,7 +67,7 @@ public class BuldingWriterTest {
     @Test
     public void testFileOverride() throws IOException {
         FileWriter fwriter = new FileWriter(RESULT_FILENAME);
-        fwriter.write("khfhgortjpkpkgrojioerjio");
+        fwriter.write("Some useful information");
         fwriter.close();
         //create result csv, write some content here
         testWriteListOfBuildings();

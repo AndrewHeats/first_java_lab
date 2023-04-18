@@ -1,12 +1,10 @@
 package ua.lviv.iot.algo.part1.lab3;
 
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 
 @ToString(callSuper = true)
-@Getter
 @NoArgsConstructor
 public class Library extends Building {
     private int numberOfBooks;
@@ -34,6 +32,6 @@ public class Library extends Building {
 
     @Override
     public String toCSV() {
-        return super.toCSV() +", "+ numberOfBooks + ", "+ numberOfHalls + ", " + address;
+        return super.toCSV() + ", " + numberOfBooks + ", " + numberOfHalls + ", " + address;
     }
 }

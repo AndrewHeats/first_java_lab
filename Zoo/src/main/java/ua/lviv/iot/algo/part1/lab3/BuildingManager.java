@@ -33,6 +33,7 @@ public class BuildingManager {
                 .collect(Collectors.toList());
         return temp;
     }
+
     public List<Building> sortBuildings() {
         return buildings.stream()
                 .sorted(Comparator.comparingInt(building -> {

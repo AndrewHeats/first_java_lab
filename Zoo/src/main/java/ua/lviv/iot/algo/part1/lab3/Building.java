@@ -5,19 +5,21 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.AllArgsConstructor;
 
-@Getter
 @NoArgsConstructor
 @ToString
 @AllArgsConstructor
+@Getter
 
 public abstract class Building {
     private boolean isResidential;
     private int yearOfBuilding;
 
     abstract double caclucateConstructionPrice();
+
     public String getHeaders() {
         return "isResidential, yearOfBuildings";
     }
+
     public String toCSV() {
         return isResidential + ", " + yearOfBuilding;
     }
