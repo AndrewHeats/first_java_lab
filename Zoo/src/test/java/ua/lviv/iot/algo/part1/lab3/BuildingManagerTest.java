@@ -47,15 +47,5 @@ public class BuildingManagerTest extends BuildingManager {
         }
     }
 
-    @Test
-    public void testSortBuildings() {
-        List<Building> expected = new ArrayList<>();
-        expected.add(building2);
-        expected.add(building1);
-        expected.add(building4);
-        expected.add(building3);
-        List<Building> actual = new ArrayList<>();
-        actual = manager.sortBuildings();
-        assertEquals(expected, actual);
-    }
+
 }

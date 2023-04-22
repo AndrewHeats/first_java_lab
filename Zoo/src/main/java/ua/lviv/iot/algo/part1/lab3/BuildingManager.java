@@ -1,5 +1,6 @@
 package ua.lviv.iot.algo.part1.lab3;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,36 +21,19 @@ public class BuildingManager {
 
     public List<Building> findBuildingsBuiltAfter(int year) {
         List<Building> temp;
-        temp = buildings.stream()
+        return buildings.stream()
                 .filter(building -> building.getYearOfBuilding() > year)
                 .collect(Collectors.toList());
-        return temp;
     }
 
     public List<Building> findResidential() {
         List<Building> temp;
-        temp = buildings.stream()
+        return buildings.stream()
                 .filter(Building::isResidential)
                 .collect(Collectors.toList());
-        return temp;
+
     }
 
-    public List<Building> sortBuildings() {
-        return buildings.stream()
-                .sorted(Comparator.comparingInt(building -> {
-                    if (building instanceof Bank) {
-                        return 0;
-                    } else if (building instanceof Zoo) {
-                        return 1;
-                    } else if (building instanceof Library) {
-                        return 2;
-                    } else if (building instanceof School) {
-                        return 3;
-                    } else {
-                        return 4;
-                    }
-                }))
-                .toList();
-    }
+
 
 }
